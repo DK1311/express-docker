@@ -1,15 +1,7 @@
-FROM mhart/alpine-node
-
-# Create app directory
-RUN mkdir -p /usr/src/app
-WORKDIR /usr/src/app
-
-# Install app dependencies
-COPY package.json /usr/src/app/
+FROM node:slim
+ENV NODE_ENV development
+WORKDIR /express-docker
+COPY . .
 RUN npm install
-
-# Bundle app source
-COPY . /usr/src/app
-
-EXPOSE 8080
-CMD [ "npm", "start" ]
+CMD [ "node", "index.js" ]
+EXPOSE 5000
