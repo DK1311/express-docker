@@ -8,6 +8,7 @@ const PORT = 5000;
 // App
 const app = express();
 app.get('/', function (req, res) {
+  console.log('Hello world\n');
   res.send('Hello world\n');
 });
 
