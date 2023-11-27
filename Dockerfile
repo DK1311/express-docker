@@ -3,5 +3,5 @@ ENV NODE_ENV development
 WORKDIR /express-docker
 COPY . .
 RUN npm install
-CMD [ "node", "index.js" ]
+CMD [ "node", "server.js" ]
 EXPOSE 5000
